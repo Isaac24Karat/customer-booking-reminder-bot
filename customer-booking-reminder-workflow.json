@@ -1,0 +1,122 @@
+{
+  "name": "Customer Booking Reminder Bot",
+  "nodes": [
+    {
+      "name": "Receive Booking List",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "notes": "Receives a list of upcoming bookings via webhook."
+    },
+    {
+      "name": "Check Transfer Date (Function)",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ],
+      "notes": "Calculates if a booking is within the next 24 hours."
+    },
+    {
+      "name": "Transfer Within 24h? (If Check)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        750,
+        300
+      ],
+      "notes": "Decides whether to send a reminder based on date comparison."
+    },
+    {
+      "name": "Send Reminder Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        250
+      ],
+      "notes": "Simulates sending a reminder notification."
+    },
+    {
+      "name": "Log Reminder Sent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1250,
+        250
+      ],
+      "notes": "Logs that a reminder notification was sent."
+    },
+    {
+      "name": "No Action (Log OK)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        450
+      ],
+      "notes": "Logs that no reminder was needed."
+    }
+  ],
+  "connections": {
+    "Receive Booking List": {
+      "main": [
+        [
+          {
+            "node": "Check Transfer Date (Function)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Transfer Date (Function)": {
+      "main": [
+        [
+          {
+            "node": "Transfer Within 24h? (If Check)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transfer Within 24h? (If Check)": {
+      "main": [
+        [
+          {
+            "node": "Send Reminder Notification",
+            "type": "main",
+            "index": 0,
+            "conditions": {
+              "true": []
+            }
+          },
+          {
+            "node": "No Action (Log OK)",
+            "type": "main",
+            "index": 0,
+            "conditions": {
+              "false": []
+            }
+          }
+        ]
+      ]
+    },
+    "Send Reminder Notification": {
+      "main": [
+        [
+          {
+            "node": "Log Reminder Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
