@@ -36,9 +36,12 @@
 ---
 
 ## Future Work
-- Integrate customer SMS gateway for mobile reminders
-- Add language personalization based on customer profiles
-- Connect directly with CRM to pull daily booking schedules
+
+- Add support for SMS and push notification reminders
+- Pull customer preferences from CRM for personalized timing
+- Log missed pickups and retry logic
+- Integrate with multilingual templates for broader customer support
+
 
 ---
 *Demo built for AI Agent Implementation Manager portfolio presentation.*
