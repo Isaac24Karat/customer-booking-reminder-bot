@@ -1,5 +1,12 @@
 # Customer Booking Reminder Bot (n8n Workflow)
 
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Built With](https://img.shields.io/badge/built%20with-n8n%20%7C%20Email%20%7C%20SMS-blue)
+![Focus](https://img.shields.io/badge/feature-Automated%20Reminders-green)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Last Update](https://img.shields.io/github/last-commit/Isaac24Karat/customer-booking-reminder-bot)
+
+
 > **Project Pitch:**  
 > I built a simple n8n workflow that monitors upcoming customer transfers and automatically sends reminders if the booking is within the next 24 hours.  
 > This workflow helps improve customer communication, reduce missed pickups, and optimize operational efficiency.
