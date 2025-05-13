@@ -41,6 +41,10 @@
 - **customer-booking-reminder-diagram.png** — Visual system diagram
 
 ---
+## 📐 Reminder Personalization Logic
+- Reminders adjust based on booking time + user timezone
+- Can exclude return-trip reminders for one-way bookings
+
 
 ## Future Work
 
